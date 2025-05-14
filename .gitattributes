@@ -1,0 +1,2 @@
+* text=auto
+assets/checkins.csv filter=lfs diff=lfs merge=lfs -text
