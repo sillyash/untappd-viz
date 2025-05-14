@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+:root {
+	--primary : #ffffff;
+	--primary-bg : #000000;
+
+	--secondary : #000000;
+	--secondary-bg : #ffffff;
+}

@@ -1,0 +1,12 @@
+@charset "utf-8";
+@import "jetbrains-mono.css";
+
+* {
+	font-family: 'JetBrains Mono';
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+
