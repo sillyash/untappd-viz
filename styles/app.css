@@ -1,0 +1,91 @@
+@charset "utf-8";
+@import "jetbrains-mono.css";
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* -------------- Global -------------- */
+
+* {
+	font-family: 'JetBrains Mono';
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+:root {
+  --header-height: 70px;
+  --footer-height: 100px;
+}
+
+/* ------------- Tailwind ------------- */
+
+@theme {
+  "primary": "#3b82f6",
+  "primary-focus": "#2563eb",
+  "primary-content": "#ffffff",
+  "secondary": "#fbbf24",
+  "secondary-focus": "#f59e0b",
+  "secondary-content": "#ffffff",
+  "accent": "#4ade80",
+  "accent-focus": "#22c55e",
+  "accent-content": "#ffffff",
+  "neutral": "#3d4451",
+  "neutral-focus": "#2a303c",
+  "neutral-content": "#ffffff",
+  "base-100": "#ffffff",
+  "base-200": "#f9fafb",
+  "base-300": "#d1d5db",
+  "base-content": "#1f2937"
+}
+
+/* ----- Header, footer and main ----- */
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+body > header {
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: row;
+
+  height: var(--header-height);
+  width: 100%;
+
+  padding: 1rem 2rem;
+
+  background-color: black;
+  color: white;
+  z-index: 10;
+}
+
+body > footer {
+  display: flex;
+  flex-direction: row;
+
+  height: var(--footer-height);
+  width: 100%;
+
+  padding: 1rem 2rem;
+
+  background-color: black;
+  color: white;
+}
+
+body > main {
+  display: flex;
+  flex-direction: column;
+  
+  flex: 1;
+  
+  padding: 1rem 2rem;
+}
+
+/* ----------------------------------- */
