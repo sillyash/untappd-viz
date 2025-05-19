@@ -54,7 +54,6 @@ body > header {
   top: 0;
   left: 0;
 
-  height: var(--header-height);
   width: 100%;
 
   padding: 1rem 2rem;
@@ -67,16 +66,21 @@ body > header {
   justify-content: space-around;
   align-items: center;
   gap: 1rem;
+
+  height: auto;
+  min-height: 56px;
 }
 
 body > footer {
-  height: var(--footer-height);
   width: 100%;
 
   padding: 1rem 2rem;
 
   background-color: black;
   color: white;
+
+  height: auto;
+  min-height: 120px;
 }
 
 body > main {
@@ -86,6 +90,14 @@ body > main {
   flex: 1;
   
   padding: 1rem 2rem;
+}
+
+/* Responsive adjustments for header/footer */
+@media (max-width: 640px) {
+  body > header, body > footer {
+    padding: 0.5rem 1rem;
+    min-height: 48px;
+  }
 }
 
 /* ----------------------------------- */

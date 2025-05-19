@@ -14,12 +14,35 @@
 	</head>
 
 	<body class="bg-base-200">
-		<header class="header navbar bg-base-100">
+    <header class="header navbar bg-base-100 flex flex-wrap items-center justify-between px-4 py-2">
+      <div class="flex-1">
         <a href="./index.html" class="btn btn-ghost normal-case text-xl">Home</a>
+      </div>
+      <div class="flex-none"></div>
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black text-white rounded-box w-52">
+          <li>
+            <a href="./about.html" class="text-white hover:bg-slate-700 transition-colors">About</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.kaggle.com/datasets/gruntoff/untappd-checkins" class="text-white hover:bg-slate-700 transition-colors">Dataset</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/sillyash/untappd-viz" class="text-white hover:bg-slate-700 transition-colors">GitHub</a>
+          </li>
+        </ul>
+      </div>
+      <nav class="hidden md:flex gap-2">
         <a href="./about.html" class="btn btn-ghost normal-case text-xl">About</a>
         <a target="_blank" href="https://www.kaggle.com/datasets/gruntoff/untappd-checkins" class="btn btn-ghost normal-case text-xl">Dataset</a>
         <a target="_blank" href="https://github.com/sillyash/untappd-viz" class="btn btn-ghost normal-case text-xl">GitHub</a>
-		</header>
+      </nav>
+    </header>
 
 		<main class="main">
       <div class="relative w-full bg-white">
