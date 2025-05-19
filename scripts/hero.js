@@ -47,28 +47,10 @@ function initializeD3Visualizations() {
   // etc.
 }
 
-function nextSection(index = -1) {
-  const allSections = document.querySelectorAll(".visualization-section");
-  // If index is provided, scroll to that section
-  if (index !== -1) {
-    const section = document.getElementById(`section${index}`);
-    if (section) {
-      allSections.forEach(s => s.classList.remove("visible"));
-      section.classList.add("visible");
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-    return;
+function nextSection(index) {
+  const section = document.getElementById(`section${index}`);
+  if (section) {
+    section.classList.add("visible");
+    section.scrollIntoView({ behavior: "smooth" });
   }
-  // Otherwise, find the currently visible section and go to the next
-  let currentIndex = -1;
-  allSections.forEach((section, i) => {
-    if (section.classList.contains("visible")) {
-      currentIndex = i;
-    }
-  });
-  let nextIndex = currentIndex + 1;
-  if (nextIndex >= allSections.length) return;
-  allSections.forEach(s => s.classList.remove("visible"));
-  allSections[nextIndex].classList.add("visible");
-  allSections[nextIndex].scrollIntoView({ behavior: "smooth" });
 }
