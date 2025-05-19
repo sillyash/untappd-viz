@@ -4,7 +4,7 @@ console.info(filename + " loaded.")
 
 /* --------------------------------- */
 
-console.log(d3);
+console.log(`D3.js version %c${d3.version}`, "color:#a980c4; font-weight:bold;");
 
 /* --------------------------------- */
 
