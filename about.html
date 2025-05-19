@@ -14,15 +14,89 @@
 	</head>
 
 	<body class="bg-base-200">
-		<header class="header navbar bg-base-100">
+    <header class="header navbar bg-base-100 flex flex-wrap items-center justify-between px-4 py-2">
+      <div class="flex-1">
         <a href="./index.html" class="btn btn-ghost normal-case text-xl">Home</a>
+      </div>
+      <div class="flex-none"></div>
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black text-white rounded-box w-52">
+          <li>
+            <a href="./about.html" class="text-white hover:bg-slate-700 transition-colors">About</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.kaggle.com/datasets/gruntoff/untappd-checkins" class="text-white hover:bg-slate-700 transition-colors">Dataset</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/sillyash/untappd-viz" class="text-white hover:bg-slate-700 transition-colors">GitHub</a>
+          </li>
+        </ul>
+      </div>
+      <nav class="hidden md:flex gap-2">
         <a href="./about.html" class="btn btn-ghost normal-case text-xl">About</a>
         <a target="_blank" href="https://www.kaggle.com/datasets/gruntoff/untappd-checkins" class="btn btn-ghost normal-case text-xl">Dataset</a>
         <a target="_blank" href="https://github.com/sillyash/untappd-viz" class="btn btn-ghost normal-case text-xl">GitHub</a>
-		</header>
+      </nav>
+    </header>
 
 		<main class="main">
-			<h1 class="text-3xl font-bold">About</h1>
+      <h2 class="text-3xl font-bold text-center mt-10">About</h2>
+
+      <section class="bg-base-200 mt-10"> 
+        <div class="container mx-auto px-4 max-w-3xl">
+          <p class="text-lg text-left">
+            This project is a data visualization of beer check-ins from the Untappd app.
+            The dataset contains information about various beers, breweries, and (anonymized) user check-ins.
+          </p>
+          <p class="text-lg text-left mt-4">
+            The goal of this project is to provide insights into beer consumption patterns and trends 
+            using D3.js and Tailwind CSS for styling.
+          </p>
+          <p class="text-lg text-left mt-4">
+            The dataset used in this project is publicly available on Kaggle and contains check-in data from Untappd users.
+            The data includes information about the beer, brewery, user, and check-in time.
+          </p>
+          <p class="text-lg text-left mt-4">
+            This project was made as a student project for the IUT of Orsay in France.
+            The goal was to learn how to use D3.js for data visualization and to create a responsive web application using 
+            Tailwind CSS.
+          </p>
+          <p class="text-lg text-left mt-4">
+            The project was developed by 
+            <a href="https://github.com/AlexandreCharpentier" target="_blank" class="text-blue-500 hover:underline">Alexandre C</a> 
+            and 
+            <a href="https://github.com/sillyash" target="_blank" class="text-blue-500 hover:underline">Ashley M</a>. 
+          </p>
+          <p class="text-lg text-left mt-4">
+            The project is 
+            <a href="https://github.com/sillyash/untappd-viz/blob/main/LICENSE" target="_blank" class="text-blue-500 hover:underline">open-source</a>
+            and available on 
+            <a href="https://github.com/sillyash/untappd-viz" target="_blank" class="text-blue-500 hover:underline">GitHub</a>.
+            Feel free to use the code for your own projects.
+          </p>
+        </div>
+      </section>
+
+      <section class="bg-base-200 mt-10">
+        <div class="container mx-auto px-4 max-w-3xl">
+          <h3 class="text-2xl font-bold text-center">Technologies Used</h3>
+          <ul class="list-disc list-inside mt-4">
+            <li>
+              <a href="https://www.kaggle.com/datasets/gruntoff/untappd-checkins" target="_blank" class="text-blue-500 hover:underline">Kaggle</a> for the dataset (Thanks to @gruntoff)
+            </li>
+            <li>
+              <a href="https://d3js.org/" target="_blank" class="text-blue-500 hover:underline">D3.js</a> for data visualization
+            </li>
+            <li>
+              <a href="https://tailwindcss.com/" target="_blank" class="text-blue-500 hover:underline">Tailwind CSS</a> for styling
+            </li>
+          </ul>
+        </div>
 		</main>
 
 		<footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
