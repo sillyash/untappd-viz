@@ -1,7 +1,6 @@
 @charset "utf-8";
 @import "jetbrains-mono.css";
 @import "tailwindcss";
-@import "./hero.css";
 @plugin "daisyui";
 
 /* -------------- Global -------------- */
@@ -88,8 +87,6 @@ body > main {
   flex-direction: column;
   
   flex: 1;
-  
-  padding: 1rem 2rem;
 }
 
 /* Responsive adjustments for header/footer */
@@ -100,4 +97,20 @@ body > main {
   }
 }
 
-/* ----------------------------------- */
+/* ------- Visualization sections ----- */
+
+.viz-section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+
+  padding: 1rem 2rem;
+}
+
+.viz-desc {
+
+}
+
+.viz-graph {
+
+}

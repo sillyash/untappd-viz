@@ -14,189 +14,94 @@
 	</head>
 
 	<body class="bg-base-200">
-    <header class="header navbar bg-base-100 flex flex-wrap items-center justify-between px-4 py-2">
-      <div class="flex-1">
-        <a href="./index.html" class="btn btn-ghost normal-case text-xl">Home</a>
+    <header class="navbar bg-base-100">
+      <div class="navbar-start">
+        <a href="./index.html" class="btn btn-ghost text-xl">Home</a>
       </div>
-      <div class="flex-none"></div>
-      <div class="dropdown dropdown-end">
-        <label tabindex="0" class="btn btn-ghost md:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </label>
-        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black text-white rounded-box w-52">
-          <li>
-            <a href="./about.html" class="text-white hover:bg-slate-700 transition-colors">About</a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.kaggle.com/datasets/gruntoff/untappd-checkins" class="text-white hover:bg-slate-700 transition-colors">Dataset</a>
-          </li>
-          <li>
-            <a target="_blank" href="https://github.com/sillyash/untappd-viz" class="text-white hover:bg-slate-700 transition-colors">GitHub</a>
-          </li>
-        </ul>
+      <div class="navbar-end">
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </label>
+          <ul tabindex="0" class="menu menu-sm dropdown-content bg-black mt-3 z-[1] p-2 shadow rounded-box w-52">
+            <li><a href="./about.html">About</a></li>
+            <li><a target="_blank" href="https://www.kaggle.com/datasets/gruntoff/untappd-checkins">Dataset</a></li>
+            <li><a target="_blank" href="https://github.com/sillyash/untappd-viz">GitHub</a></li>
+          </ul>
+        </div>
+        <div class="hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a href="./about.html">About</a></li>
+            <li><a target="_blank" href="https://www.kaggle.com/datasets/gruntoff/untappd-checkins">Dataset</a></li>
+            <li><a target="_blank" href="https://github.com/sillyash/untappd-viz">GitHub</a></li>
+          </ul>
+        </div>
       </div>
-      <nav class="hidden md:flex gap-2">
-        <a href="./about.html" class="btn btn-ghost normal-case text-xl">About</a>
-        <a target="_blank" href="https://www.kaggle.com/datasets/gruntoff/untappd-checkins" class="btn btn-ghost normal-case text-xl">Dataset</a>
-        <a target="_blank" href="https://github.com/sillyash/untappd-viz" class="btn btn-ghost normal-case text-xl">GitHub</a>
-      </nav>
     </header>
 
-		<main class="main">
-      <div class="relative w-full">
-        <!-- Hero Section -->
-        <section id="section1" class="min-h-screen flex items-center justify-center p-8">
-          <div class="max-w-4xl text-center">
-            <h1 class="text-5xl md:text-6xl font-bold text-slate-800 mb-6 opacity-0 transform translate-y-10 transition-all duration-1000 ease-out" id="hero-title">
-              Untappd Viz
-            </h1>
-            <p class="text-xl text-slate-600 mb-10 opacity-0 transform translate-y-10 transition-all duration-1000 delay-300 ease-out" id="hero-subtitle">
-                Visualize and Explore Beer Check-ins Data from the <a href="https://untappd.com/" target="_blank" class="link link-primary underline ml-1">Untappd App</a>.
-            </p>
-            <div class="opacity-0 transform translate-y-10 transition-all duration-1000 delay-500 ease-out" id="hero-cta">
-              <button class="btn btn-primary bg-indigo-600 hover:bg-indigo-700 border-none text-white px-8 py-3" onclick="nextSection(2)">
-                Begin Exploration
+		<main>
+      <div class="relative">
+        <!-- Hero Section (title) -->
+        <div
+          class="hero min-h-screen"
+          style="background-image: url(https://c1.wallpaperflare.com/path/672/499/652/beer-a-pint-cup-alcohol-9a9f1bdeba98cc84d1b4ee3d2dbc21c1.jpg);"
+        >
+          <div class="hero-overlay"></div>
+          <div class="hero-content text-neutral-content text-center">
+            <div class="max-w-md">
+              <h1 class="mb-5 text-5xl font-bold">Untappd Viz</h1>
+              <p class="mb-5">
+                Visualize data of beer check-ins from people and breweries all around the world.
+              </p>
+              <button
+
+                class="btn btn-primary"
+                onclick="window.scrollTo(0,960)"
+              >
+                Get Started
               </button>
             </div>
           </div>
-        </section>
-
-        <!-- Visualization Sections -->
-        <div class="visualization-container">
-          <!-- Section 1 -->
-          <section id="section2" class="min-h-screen flex flex-col justify-center p-8 md:p-16 bg-white visualization-section">
-            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center flex-1">
-              <div class="visualization-text order-2 md:order-1">
-              <h2 class="text-3xl font-bold text-slate-800 mb-4">Global Market Trends</h2>
-              <p class="text-lg text-slate-600 mb-6">
-                Our analysis reveals emerging patterns across international markets, highlighting opportunities for strategic expansion and investment.
-              </p>
-              <div class="stats bg-slate-50 shadow">
-                <div class="stat">
-                <div class="stat-title">Growth Rate</div>
-                <div class="stat-value text-primary">+24.8%</div>
-                <div class="stat-desc">Jan 1st - May 1st</div>
-                </div>
-              </div>
-              </div>
-              <div class="visualization-content order-1 md:order-2 bg-slate-50 rounded-xl shadow-lg p-6 h-[400px] flex items-center justify-center">
-              <!-- D3.js visualization will be inserted here -->
-              <div class="d3-visualization" id="viz-1">
-                <div class="placeholder-content flex flex-col items-center justify-center">
-                <div class="text-slate-400">D3.js Map Visualization</div>
-                <div class="loading-spinner mt-4"></div>
-                </div>
-              </div>
-              </div>
-            </div>
-            <div class="flex justify-center mt-8">
-              <button class="btn btn-primary bg-indigo-600 hover:bg-indigo-700 border-none text-white px-8 py-3" onclick="nextSection(3)">
-                Next
-              </button>
-            </div>
-          </section>
-
-          <!-- Section 2 -->
-          <section id="section3" class="min-h-screen flex flex-col justify-center p-8 md:p-16 bg-slate-50 visualization-section">
-            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center flex-1">
-              <div class="visualization-content order-1 md:order-2 bg-white rounded-xl shadow-lg p-6 h-[400px] flex items-center justify-center">
-              <!-- D3.js visualization will be inserted here -->
-              <div class="d3-visualization" id="viz-2">
-                <div class="placeholder-content flex flex-col items-center justify-center">
-                <div class="text-slate-400">D3.js Network Graph</div>
-                <div class="loading-spinner mt-4"></div>
-                </div>
-              </div>
-              </div>
-              <div class="visualization-text order-2 md:order-1">
-              <h2 class="text-3xl font-bold text-slate-800 mb-4">Customer Relationship Mapping</h2>
-              <p class="text-lg text-slate-600 mb-6">
-                Discover the intricate connections between customer segments and product offerings, revealing key insights for targeted marketing campaigns.
-              </p>
-              <div class="stats bg-white shadow">
-                <div class="stat">
-                <div class="stat-title">Engagement</div>
-                <div class="stat-value text-secondary">89%</div>
-                <div class="stat-desc">21% higher than last quarter</div>
-                </div>
-              </div>
-              </div>
-            </div>
-            <div class="flex justify-center mt-8">
-              <button class="btn btn-primary bg-indigo-600 hover:bg-indigo-700 border-none text-white px-8 py-3" onclick="nextSection(4)">
-                Next
-              </button>
-            </div>
-          </section>
-
-          <!-- Section 3 -->
-          <section id="section4" class="min-h-screen flex flex-col justify-center p-8 md:p-16 bg-white visualization-section">
-            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center flex-1">
-              <div class="visualization-text order-2 md:order-1">
-              <h2 class="text-3xl font-bold text-slate-800 mb-4">Revenue Forecasting</h2>
-              <p class="text-lg text-slate-600 mb-6">
-                Our predictive models provide accurate revenue projections based on historical data and market indicators, enabling confident strategic planning.
-              </p>
-              <div class="stats bg-slate-50 shadow">
-                <div class="stat">
-                <div class="stat-title">Prediction Accuracy</div>
-                <div class="stat-value text-accent">96.3%</div>
-                <div class="stat-desc">Based on 5-year historical data</div>
-                </div>
-              </div>
-              </div>
-              <div class="visualization-content order-1 md:order-2 bg-slate-50 rounded-xl shadow-lg p-6 h-[400px] flex items-center justify-center">
-              <!-- D3.js visualization will be inserted here -->
-              <div class="d3-visualization" id="viz-3">
-                <div class="placeholder-content flex flex-col items-center justify-center">
-                <div class="text-slate-400">D3.js Time Series Chart</div>
-                <div class="loading-spinner mt-4"></div>
-                </div>
-              </div>
-              </div>
-            </div>
-            <div class="flex justify-center mt-8">
-              <button class="btn btn-primary bg-indigo-600 hover:bg-indigo-700 border-none text-white px-8 py-3" onclick="nextSection(5)">
-                Next
-              </button>
-            </div>
-            </section>
-
-            <!-- Section 4 -->
-            <section id="section5" class="min-h-screen flex flex-col justify-center p-8 md:p-16 bg-slate-50 visualization-section">
-            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center flex-1">
-              <div class="visualization-content order-1 md:order-2 bg-white rounded-xl shadow-lg p-6 h-[400px] flex items-center justify-center">
-              <!-- D3.js visualization will be inserted here -->
-              <div class="d3-visualization" id="viz-4">
-                <div class="placeholder-content flex flex-col items-center justify-center">
-                <div class="text-slate-400">D3.js Choropleth Map</div>
-                <div class="loading-spinner mt-4"></div>
-                </div>
-              </div>
-              </div>
-              <div class="visualization-text order-2 md:order-1">
-              <h2 class="text-3xl font-bold text-slate-800 mb-4">Regional Performance Analysis</h2>
-              <p class="text-lg text-slate-600 mb-6">
-                Identify high-performing regions and untapped markets with our comprehensive geographic analysis tools.
-              </p>
-              <div class="stats bg-white shadow">
-                <div class="stat">
-                <div class="stat-title">Top Region</div>
-                <div class="stat-value text-primary">North America</div>
-                <div class="stat-desc">37% of total revenue</div>
-                </div>
-              </div>
-              </div>
-            </div>
-            <div class="flex justify-center mt-8">
-              <button class="btn btn-primary bg-indigo-600 hover:bg-indigo-700 border-none text-white px-8 py-3" onclick="window.scrollTo(0, 0)">
-                Back to start
-              </button>
-            </div>
-          </section>
         </div>
+
+        <!-- Visualisation sections -->
+        <div class="carousel carousel-vertical h-screen">
+
+          <!-- Section 1 -->
+          <section id="section1" class="viz-section carousel-item">
+            <div class="viz-desc bg-black text-white card p-6">
+              <!-- Description -->
+              <h2 class="text-2xl font-bold mb-3">
+                Global Market Trends
+              </h2>
+              <p class="text-justify">
+                Our analysis reveals emerging patterns across international markets,
+                highlighting opportunities for strategic expansion and investment.
+              </p>
+
+              <!-- Cool stats -->
+              <div class="flex flex-row justify-center w-full">
+                <div class="card stat bg-white text-white mt-4 mx-2 w-min">
+                  <div class="stat-title text-black">Growth Rate</div>
+                  <div class="stat-value text-pink-500">+24.8%</div>
+                  <div class="stat-desc text-black">Jan 1st - May 1st</div>
+                </div>
+
+                <div class="card stat bg-white text-white mt-4 mx-2 w-min">
+                  <div class="stat-title text-black">Growth Rate</div>
+                  <div class="stat-value text-pink-500">+24.8%</div>
+                  <div class="stat-desc text-black">Jan 1st - May 1st</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- D3 graph -->
+            <div id="viz-1" class="viz-graph">
+              <div>D3.js Map Visualization</div>
+            </div>
+          </section>
       </div>
 		</main>
 
@@ -220,7 +125,6 @@
       </nav>
 		</footer>
 
-    <script src="scripts/hero.js"></script>
 		<script src="scripts/main.js"></script>
 	</body>
 </html>
