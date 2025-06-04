@@ -99,12 +99,21 @@ body > main {
 
 /* ------- Visualization sections ----- */
 
+#carousel {
+  height: calc(100vh - var(--header-height));
+  scroll-margin-top: var(--header-height);
+}
+
 .viz-section {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 
-  padding: 1rem 2rem;
+  --padding-h: 2rem;
+  padding: var(--padding-h) 3rem;
+
+  height: calc(100vh - var(--header-height) -  2 * var(--padding-h));
+  width: 100%;
 }
 
 .viz-desc {

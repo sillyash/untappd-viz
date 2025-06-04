@@ -56,9 +56,8 @@
                 Visualize data of beer check-ins from people and breweries all around the world.
               </p>
               <button
-
                 class="btn btn-primary"
-                onclick="window.scrollTo(0,960)"
+                onclick="scrollToCarousel()"
               >
                 Get Started
               </button>
@@ -67,7 +66,9 @@
         </div>
 
         <!-- Visualisation sections -->
-        <div class="carousel carousel-vertical h-screen">
+        <div
+          id="carousel"
+          class="carousel carousel-vertical">
 
           <!-- Section 1 -->
           <section id="section1" class="viz-section carousel-item">
