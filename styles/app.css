@@ -110,6 +110,7 @@ body > main {
 
   padding: var(--padding-h) var(--padding-w);
   width: calc(100% - 2 * var(--padding-w));
+  height: calc(100vh - 2 * var(--padding-h));
 }
 
 .viz-desc {
@@ -170,6 +171,6 @@ body > main {
 .viz-graph > svg {
   border: solid black 2px;
   border-radius: 10px;
-  
+
   width: 100%;
 }
