@@ -1,16 +1,28 @@
 // Histogramme des notes générales
 
-export function createChart6(containerId) {
+export function createChart5(containerId) {
     d3.csv("assets/checkins.csv").then(function(csv) {
   
       // Filtrer IPA
-      var data = csv.map(d => +d.checkins_count);
-
-      data.sort((a,b) => a-b);
+      var ratings = csv.map(d => +d.rating_score);
+  
+      const binSize = 0.25;
+      const binsCount = Math.ceil(5 / binSize); // 20 bins pour 0->5
+  
+      // Initialiser les bins à 0
+      const bins = new Array(binsCount).fill(0);
+  
+      // Remplir les bins
+      ratings.forEach(r => {
+        let binIndex = Math.floor(r / binSize);
+        if (binIndex >= binsCount) binIndex = binsCount - 1;
+        if (binIndex < 0) binIndex = 0;
+        bins[binIndex]++;
+      });
   
       const width = 1000;
       const height = 500;
-      const margin = { top: 20, right: 20, bottom: 40, left: 100 };
+      const margin = { top: 20, right: 20, bottom: 40, left: 40 };
       const innerWidth = width - margin.left - margin.right;
       const innerHeight = height - margin.top - margin.bottom;
   
@@ -27,38 +39,38 @@ export function createChart6(containerId) {
       g.setAttribute("transform", `translate(${margin.left},${margin.top})`);
       svg.appendChild(g);
   
-    // Échelles
-    const xScale = d3.scaleBand()
-      .domain(d3.range(data.length))
-      .range([0, innerWidth])
-      .padding(0.1);
-
-    const yScale = d3.scaleLinear()
-      .domain([0, d3.max(data)])
-      .range([innerHeight, 0]);
+      // Échelles
+      const xScale = d3.scaleBand()
+        .domain(d3.range(binsCount))
+        .range([0, innerWidth])
+        .padding(0.1);
   
-      // Axe Y
-      const axisLeft = d3.axisLeft(yScale)
-      .ticks(6)                    // ~6 ticks automatiques
-      .tickFormat(d3.format(".2s"))
-
-      // Axe X avec un label toutes les 10 barres
+      const maxFreq = Math.max(...bins);
+      const yScale = d3.scaleLinear()
+        .domain([0, maxFreq])
+        .range([innerHeight, 0]);
+  
+      // Axe X avec labels des intervalles
       const axisBottom = d3.axisBottom(xScale)
-        .tickValues(xScale.domain().filter((d, i) => !(i % 1000)));
-
-      // Groupe pour l'axe Y
-      const yAxisGroup = document.createElementNS(svgNS, "g");
-      d3.select(yAxisGroup).call(axisLeft);
-      g.appendChild(yAxisGroup);
-
-      // Groupe pour l'axe X
+      .tickFormat(i => {
+        const start = i * binSize;
+        const end = (i + 1) * binSize;
+        const avg = (start + end) / 2;
+        return avg.toFixed(1);
+      });
       const xAxisGroup = document.createElementNS(svgNS, "g");
       xAxisGroup.setAttribute("transform", `translate(0,${innerHeight})`);
       d3.select(xAxisGroup).call(axisBottom);
       g.appendChild(xAxisGroup);
   
+      // Axe Y
+      const axisLeft = d3.axisLeft(yScale).ticks(5);
+      const yAxisGroup = document.createElementNS(svgNS, "g");
+      d3.select(yAxisGroup).call(axisLeft);
+      g.appendChild(yAxisGroup);
+  
       // Barres
-      data.forEach((count, i) => {
+      bins.forEach((count, i) => {
         const rect = document.createElementNS(svgNS, "rect");
         rect.setAttribute("x", xScale(i));
         rect.setAttribute("y", yScale(count));

@@ -1,6 +1,6 @@
 // Notes pour IPA American
 
-export function createChart3(containerId) {
+export function createChart4(containerId) {
     d3.csv("assets/checkins.csv").then(function(csv) { /* ici toute votre creation de la visualization */
 
       var ipaData = csv.filter(function(d) {
