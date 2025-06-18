@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Histogramme Vanilla JS</title>
+  <style>
+    body { font-family: sans-serif; }
+    svg { max-width: 100%; height: auto; border: 1px solid #ccc; }
+  </style>
+
+  <!-- Inclure D3.js depuis un CDN -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+  <h1>Histogramme Vanilla JS</h1>
+  <div id="chart-container2"></div>
+  <div id="chart-container3"></div>
+  <div id="chart-container4"></div>
+  <div id="chart-container5"></div>
+  <div id="chart-container6"></div>
+
+  <!-- Importer ton fichier JS avec module -->
+  <script type="module">
+    import { createChart2 } from './scripts/visualizations/noteBeer.js';
+    import { createChart3 } from './scripts/visualizations/noteIPA.js';  
+    import { createChart4 } from './scripts/visualizations/noteIPAAmerican.js';  
+    import { createChart5 } from './scripts/visualizations/notesHisto.js';  
+    import { createChart6 } from './scripts/visualizations/nbCheckPerBeer.js';  
+
+    createChart2('chart-container2');
+    createChart3('chart-container3');
+    createChart4('chart-container4');
+    createChart5('chart-container5');
+    createChart6('chart-container6');
+
+  </script>
+
+</body>
+</html>
