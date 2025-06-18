@@ -4,41 +4,26 @@ async function loadData() {
 	await d3.csv('assets/checkins.csv').then(function(csvData) {
 		data = d3.rollup(
 			csvData,
-			v => v.length,
-			d => d.brewery_name
+      (D) => D.length,
+      (d) => d.brewery_name,
+      (d) => d.beer_name,
 		);
 	})
-
-	console.log(data);
 }
 
 async function main() {
 	await loadData();
+  
+  let margin = {top: 20, right: 30, bottom: 40, left: 30};
+  let width = 200 - margin.left - margin.right;
+  let height = 200 - margin.top - margin.bottom; 
 
-	const barHeight = 25;
-  const marginTop = 30;
-  const marginRight = 0;
-  const marginBottom = 10;
-  const marginLeft = 30;
-  const width = 928;
-  const height = Math.ceil((data.length + 0.1) * barHeight) + marginTop + marginBottom;
-
-	// Create the scales
-  const x = null;
-  const y = null;
-
-  // Create a value format
-  const format = x.tickFormat(20, "%");
-
-  // Create the SVG container.
-  const svg = d3.create("svg")
-      .attr("width", width)
-      .attr("height", height)
-      .attr("viewBox", [0, 0, width, height])
-      .attr("style", "max-width: 100%; height: auto; font: 10px sans-serif;");
-
-	// attach to HTML
-	d3.select("#viz-1").append(() => svg.node());
+  let svg = d3.select("#viz-1")
+    .append("svg")
+    .attr("height", "min(100%, 90vh)")
+    .attr("viewBox", `0 0 ${height} ${width}`)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 }
 
 main();
