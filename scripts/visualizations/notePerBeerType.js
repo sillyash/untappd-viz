@@ -1,4 +1,4 @@
-const containerId = 'viz-2';
+const containerId = 'viz-';
 
 function main() {
   d3.csv("assets/checkins.csv").then(function(csv) { /* ici toute votre creation de la visualization */

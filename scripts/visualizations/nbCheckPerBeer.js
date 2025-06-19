@@ -1,6 +1,7 @@
 // Histogramme des notes générales
 
-export function createChart6(containerId) {
+const containerId = 'viz-2';
+function main() {
     d3.csv("assets/checkins.csv").then(function(csv) {
   
       const filtered = csv.filter(d => +d.checkins_count > 20000);
@@ -79,4 +80,6 @@ export function createChart6(containerId) {
       container.appendChild(svg);
     });
   }
+
+main();
   
