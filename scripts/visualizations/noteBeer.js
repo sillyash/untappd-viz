@@ -1,6 +1,6 @@
 // Notes pour bière générales
-
-export function createChart2(containerId) {
+const containerId = 'viz-';
+function main() {
     d3.csv(CSV_URI).then(function(csv) { /* ici toute votre creation de la visualization */
 
       var data = csv.map(function(d) { return d.avg_rating; })
@@ -98,3 +98,5 @@ export function createChart2(containerId) {
       container.appendChild(svg);
     });
   }
+
+main();

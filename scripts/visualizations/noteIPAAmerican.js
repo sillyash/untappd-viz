@@ -1,6 +1,6 @@
 // Notes pour IPA American
-
-export function createChart4(containerId) {
+const containerId = 'viz-';
+function main() {
     d3.csv(CSV_URI).then(function(csv) { /* ici toute votre creation de la visualization */
 
       var ipaData = csv.filter(function(d) {
@@ -102,3 +102,5 @@ export function createChart4(containerId) {
       container.appendChild(svg);
     });
   }
+
+  main();
