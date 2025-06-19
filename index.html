@@ -13,7 +13,14 @@
 		<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script>
       const url = new URL(window.location);
-      const CSV_URI = url.href.replace('index.html','assets/checkins.csv');
+      let CSV_URI = url.href;
+      
+      if (CSV_URI.includes('index.html')) {
+        CSV_URI = CSV_URI.replace('index.html','assets/checkins.csv');
+      } else {
+        CSV_URI += 'assets/checkins.csv';
+      }
+
       console.log('CSV URI', CSV_URI);
     </script>
 	</head>
