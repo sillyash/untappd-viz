@@ -9,8 +9,6 @@ function main() {
       const grouped = d3.group(filtered, d => d.beer_name);
     
       const data = Array.from(grouped, ([beer_name, records]) => +records[0].checkins_count);
-    
-      console.log(data);
 
       data.sort((a,b) => a-b);
   

@@ -9,8 +9,6 @@ export function createChartVIMH(containerId) {
 
       var data = ipaData.map(function(d) { return d.rating_score; })
 
-      console.log(data);
-
       data.sort((a,b) => a-b);
     
       const width = 1000;
