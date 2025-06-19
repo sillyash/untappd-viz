@@ -1,7 +1,7 @@
 var data, cols;
 
 async function loadData() {
-  await d3.csv("../../assets/checkins.csv").then(function (csvData) {
+  await d3.csv(CSV_URI).then(function (csvData) {
     /** Group by 'brewery_name'.
      * For each brewery group (v), create a Set of unique 'beer_name's
      * and get its size, i.e. count of unique beers.

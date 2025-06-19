@@ -1,7 +1,7 @@
 // Notes pour IPA
 
 export function createChart3(containerId) {
-    d3.csv("../../assets/checkins.csv").then(function(csv) { /* ici toute votre creation de la visualization */
+    d3.csv(CSV_URI).then(function(csv) { /* ici toute votre creation de la visualization */
 
       var ipaData = csv.filter(function(d) {
         return d.beer_style.substring(0,3) === 'IPA';  // Filtrer par type de bière

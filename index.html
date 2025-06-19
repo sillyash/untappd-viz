@@ -11,6 +11,14 @@
 		<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 		<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script>
+      const url = new URL(window.location);
+      const root = url.hostname;
+      const port = ':' + url.port;
+      const protocol = url.protocol + '//';
+      const CSV_URI = protocol + root + port + '/assets/checkins.csv';
+      console.log('CSV URI', CSV_URI);
+    </script>
 	</head>
 
 	<body class="bg-base-200">

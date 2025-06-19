@@ -1,7 +1,7 @@
 // Notes pour AVA machin
 
 export function createChartVIMH(containerId) {
-    d3.csv("../../assets/checkins.csv").then(function(csv) { /* ici toute votre creation de la visualization */
+    d3.csv(CSV_URI).then(function(csv) { /* ici toute votre creation de la visualization */
 
       var ipaData = csv.filter(function(d) {
         return d.beer_name === 'Alivaria Beloe Zoloto (Аливария Белое Золото)';  // Filtrer par type de bière

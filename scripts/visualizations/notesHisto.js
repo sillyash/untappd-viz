@@ -1,7 +1,7 @@
 const containerId = 'viz-1';
 
 function main() {
-  d3.csv("../../assets/checkins.csv").then(function(csv) {
+  d3.csv(CSV_URI).then(function(csv) {
 
     // Filtrer IPA
     var ratings = csv.map(d => +d.rating_score);
