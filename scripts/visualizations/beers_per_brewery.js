@@ -26,11 +26,14 @@ async function loadData() {
 }
 
 function makeSVG(width, height, margin) {
+  const totalWidth = width + margin.left + margin.right;
+  const totalHeight = height + margin.top + margin.bottom;
+  
   let ret = d3
     .select("#viz-1")
     .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("viewBox", `0 0 ${totalWidth} ${totalHeight}`)
+    .attr("preserveAspectRatio", "xMidYMid meet")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -60,7 +63,6 @@ function makeYaxis(height, data) {
 
 async function main() {
   await loadData();
-  console.log(data);
 
   const margin = { top: 20, right: 30, bottom: 180, left: 60 }; // Increased bottom margin for brewery names
   const width = 900 - margin.left - margin.right; // Increased width
