@@ -43,10 +43,11 @@ function main() {
     svg.appendChild(g);
 
     // Échelles
-    const xScale = d3.scaleBand()
-      .domain(d3.range(binsCount))
-      .range([0, innerWidth])
-      .padding(0.1);
+    const xScale = d3.scaleLinear()
+      .domain([0, 5])
+      .range([0, innerWidth]);
+
+    const barWidth = xScale(binSize) - xScale(0);
 
     const maxFreq = Math.max(...bins);
     const yScale = d3.scaleLinear()
@@ -54,13 +55,10 @@ function main() {
       .range([innerHeight, 0]);
 
     // Axe X avec labels des intervalles
+    const tickValues = d3.range(0, 5.1, binSize); 
     const axisBottom = d3.axisBottom(xScale)
-    .tickFormat(i => {
-      const start = i * binSize;
-      const end = (i + 1) * binSize;
-      const avg = (start + end) / 2;
-      return avg.toFixed(1);
-    });
+      .tickValues(tickValues)
+      .tickFormat(d => d.toFixed(2));
     const xAxisGroup = document.createElementNS(svgNS, "g");
     xAxisGroup.setAttribute("transform", `translate(0,${innerHeight})`);
     d3.select(xAxisGroup).call(axisBottom);
@@ -75,9 +73,10 @@ function main() {
     // Barres
     bins.forEach((count, i) => {
       const rect = document.createElementNS(svgNS, "rect");
-      rect.setAttribute("x", xScale(i));
+      const xPos = xScale(i * binSize); // Position au début de l'intervalle
+      rect.setAttribute("x", xPos);
       rect.setAttribute("y", yScale(count));
-      rect.setAttribute("width", xScale.bandwidth());
+      rect.setAttribute("width", barWidth);
       rect.setAttribute("height", innerHeight - yScale(count));
       rect.setAttribute("fill", "steelblue");
       g.appendChild(rect);
