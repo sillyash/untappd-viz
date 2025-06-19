@@ -4,7 +4,10 @@ function main() {
   d3.csv(CSV_URI).then(function(csv) {
 
     // Filtrer IPA
-    var ratings = csv.map(d => +d.rating_score);
+    var ratings = csv
+        .filter(d => d.rating_score && d.rating_score >= 0.0)
+        .map(d => d.rating_score);
+
 
     const binSize = 0.25;
     const binsCount = Math.ceil(5 / binSize); // 20 bins pour 0->5
