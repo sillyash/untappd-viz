@@ -133,10 +133,16 @@ body > main {
   margin-bottom: 20px;
 }
 
-.viz-desc > p {
+.viz-text {
   flex: 3;
-  
-  max-height: max-content;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.viz-text > p {
+  text-align: justify;
+  margin-bottom: 20px;
 }
 
 .stats-showcase {

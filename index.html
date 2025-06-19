@@ -51,12 +51,12 @@
           <div class="hero-overlay"></div>
           <div class="hero-content text-neutral-content text-center">
             <div class="max-w-md">
-              <h1 class="mb-5 text-5xl font-bold">Untappd Viz</h1>
-              <p class="mb-5">
-                Visualize data of beer check-ins from people and breweries all around the world.
+              <h1 class="mb-5 text-7xl font-bold">Untappd Viz</h1>
+              <p class="mb-5 text-lg">
+                Visualize data of beer check-ins from people and breweries in <b>Eastern Europe</b>.
               </p>
               <button
-                class="btn btn-primary"
+                class="btn btn-primary text-lg"
                 onclick="scrollToCarousel()"
               >
                 Get Started
@@ -75,25 +75,44 @@
             <div class="viz-desc card p-6">
               <!-- Description -->
               <h2 class="text-2xl">
-                Global Market Trends
+                Breweries with the most beers
               </h2>
-              <p class="text-justify">
-                Our analysis reveals emerging patterns across international markets,
-                highlighting opportunities for strategic expansion and investment.
-              </p>
+              <div class="viz-text">
+                <p>
+                  We extracted the top 25 breweries with the most different beers produced.
+                </p>
+                <p>
+                  We can see that Jungle Brewery produces 87 different beers :
+                  however, we can see that Jungle Brewery is a <i>"Micro Brewery"</i>.
+                </p>
+                <p>
+                  The following 2 breweries with the most beers are also
+                  <i>"micro"</i> or <i>"nano"</i> breweries.
+                </p>
+                <p>
+                  This begs the question : is brewery size linked to the number
+                  of different beers produced ?
+                </p>
+              </div>
 
               <!-- Cool stats -->
               <div class="stats-showcase">
                 <div class="card stat bg-white text-white w-min">
-                  <div class="stat-title text-black">Growth Rate</div>
-                  <div class="stat-value text-pink-500">+24.8%</div>
-                  <div class="stat-desc text-black">Jan 1st - May 1st</div>
+                  <div class="stat-title text-black">Jungle Brewery (Minsk)</div>
+                  <div class="stat-value text-[#C9B037]">87 beers</div>
+                  <div class="stat-desc text-black">Micro Brewery</div>
                 </div>
 
                 <div class="card stat bg-white text-white w-min">
-                  <div class="stat-title text-black">Growth Rate</div>
-                  <div class="stat-value text-pink-500">+24.8%</div>
-                  <div class="stat-desc text-black">Jan 1st - May 1st</div>
+                  <div class="stat-title text-black">Malanka (Minsk)</div>
+                  <div class="stat-value text-[#909090]">72 beers</div>
+                  <div class="stat-desc text-black">Nano Brewery</div>
+                </div>
+
+                <div class="card stat bg-white text-white w-min">
+                  <div class="stat-title text-black">13 Litar (Pinsk)</div>
+                  <div class="stat-value text-[#CD7F32]">62 beers</div>
+                  <div class="stat-desc text-black">Micro Brewery</div>
                 </div>
               </div>
             </div>
