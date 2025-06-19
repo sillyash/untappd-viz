@@ -18,8 +18,8 @@ function main() {
 
   
     const width = 1000;
-    const height = 500;
-    const margin = { top: 20, right: 20, bottom: 150, left: 90 };
+    const height = 600;
+    const margin = { top: 20, right: 20, bottom: 180, left: 90 };
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
   
