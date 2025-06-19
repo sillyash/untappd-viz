@@ -1,5 +1,5 @@
 // Notes pour bière générales
-const containerId = 'viz-';
+const containerId = 'viz-8';
 function main() {
     d3.csv(CSV_URI).then(function(csv) { /* ici toute votre creation de la visualization */
 
