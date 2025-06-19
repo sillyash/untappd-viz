@@ -3,7 +3,7 @@
 export function createChart6(containerId) {
     d3.csv("assets/checkins.csv").then(function(csv) {
   
-      const filtered = csv.filter(d => +d.checkins_count > 30000);
+      const filtered = csv.filter(d => +d.checkins_count > 20000);
 
       const grouped = d3.group(filtered, d => d.beer_name);
     
@@ -15,7 +15,7 @@ export function createChart6(containerId) {
   
       const width = 1000;
       const height = 500;
-      const margin = { top: 20, right: 20, bottom: 40, left: 100 };
+      const margin = { top: 20, right: 20, bottom: 40, left: 50 };
       const innerWidth = width - margin.left - margin.right;
       const innerHeight = height - margin.top - margin.bottom;
   
@@ -49,7 +49,7 @@ export function createChart6(containerId) {
 
       // Axe X avec un label
       const axisBottom = d3.axisBottom(xScale)
-      .tickValues([10, 20, 30, 40, 50, 60]);
+      .tickValues([10, 20, 30, 40, 50, 60, 70, 80, 90]);
       // Groupe pour l'axe Y
       const yAxisGroup = document.createElementNS(svgNS, "g");
       d3.select(yAxisGroup).call(axisLeft);
