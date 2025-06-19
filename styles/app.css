@@ -16,6 +16,9 @@ html {
 :root {
   --header-height: 80px;
   --footer-height: 180px;
+
+  --section-padding-h: 10px;
+  --section-padding-w: 15px;
 }
 
 /* ------------- Tailwind ------------- */
@@ -105,12 +108,9 @@ body > main {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 15px;
 
-  --padding-h: 10px;
-  --padding-w: 15px;
-
-  padding: var(--padding-h) var(--padding-w);
-  width: calc(100% - 2 * var(--padding-w));
-  height: calc(100vh - 2 * var(--padding-h));
+  padding: var(--section-padding-h) var(--section-padding-w);
+  width: calc(100% - 2 * var(--section-padding-w));
+  height: calc(100% - 2 * var(--section-padding-h));
 }
 
 .viz-desc {
@@ -189,4 +189,5 @@ body > main {
   border-radius: 10px;
 
   width: 100%;
+  max-height: calc(100vh - 2 * var(--section-padding-h));;
 }

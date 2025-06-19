@@ -21,7 +21,7 @@ async function loadData() {
     data.sort((a, b) => b.num_beers - a.num_beers);
 
     // Only keep biggest
-    data = data.slice(0, 25);
+    data = data.slice(0, 20);
   });
 }
 
