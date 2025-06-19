@@ -30,7 +30,7 @@ function makeSVG(width, height, margin) {
   const totalHeight = height + margin.top + margin.bottom;
   
   let ret = d3
-    .select("#viz-1")
+    .select("#viz-3")
     .append("svg")
     .attr("viewBox", `0 0 ${totalWidth} ${totalHeight}`)
     .attr("preserveAspectRatio", "xMidYMid meet")
