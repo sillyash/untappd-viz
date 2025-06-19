@@ -13,10 +13,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script>
       const url = new URL(window.location);
-      const root = url.hostname;
-      const port = ':' + url.port;
-      const protocol = url.protocol + '//';
-      const CSV_URI = protocol + root + port + '/assets/checkins.csv';
+      const CSV_URI = url.href.replace('index.html','assets/checkins.csv');
       console.log('CSV URI', CSV_URI);
     </script>
 	</head>
