@@ -228,13 +228,13 @@
           <section class="viz-section carousel-item">
             <!-- D3 graph -->
             <div id="viz-5" class="viz-graph">
-              <script type="module" src="scripts/visualizations/avg_beers_brewery_type.js"></script>
+              <script type="module" src="scripts/visualizations/checkinsPerBeerType.js"></script>
             </div>
 
             <div class="viz-desc card p-6">
               <!-- Description -->
               <h2 class="text-2xl">
-                Average number of beers depending on brewery type
+                Number of Chekins per beer type
               </h2>
               <div class="viz-text">
                 <p>
@@ -257,13 +257,13 @@
           <section class="viz-section carousel-item">
             <!-- D3 graph -->
             <div id="viz-6" class="viz-graph">
-              <script type="module" src="scripts/visualizations/avg_beers_brewery_type.js"></script>
+              <script type="module" src="scripts/visualizations/notePerBeerType.js"></script>
             </div>
 
             <div class="viz-desc card p-6">
               <!-- Description -->
               <h2 class="text-2xl">
-                Average number of beers depending on brewery type
+                Average note for beers per type
               </h2>
               <div class="viz-text">
                 <p>
@@ -286,7 +286,7 @@
           <section class="viz-section carousel-item">
             <!-- D3 graph -->
             <div id="viz-7" class="viz-graph">
-              <script type="module" src="scripts/visualizations/avg_beers_brewery_type.js"></script>
+              <script type="module" src="scripts/visualizations/noteIPAVIMH.js"></script>
             </div>
 
             <div class="viz-desc card p-6">
@@ -314,8 +314,37 @@
           <!-- Section 8 -->
           <section class="viz-section carousel-item">
             <!-- D3 graph -->
-            <div id="viz-8" class="viz-graph">
-              <script type="module" src="scripts/visualizations/avg_beers_brewery_type.js"></script>
+
+            <div class="viz-graph">
+              <div class="carousel rounded-box w-full">
+                <div id="slide1" class="carousel-item relative w-full">
+                  <div id="viz-8" class="viz-graph">
+                    <script type="module" src="scripts/visualizations/noteBeer.js"></script>
+                  </div>
+                  <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                      <button class="btn btn-circle carousel-nav-btn" data-target="slide1">❮</button>
+                      <button class="btn btn-circle carousel-nav-btn" data-target="slide2">❯</button>
+                  </div>
+                </div>
+                <div id="slide2" class="carousel-item relative w-full">
+                  <div id="viz-9" class="viz-graph">
+                    <script type="module" src="scripts/visualizations/noteIPA.js"></script>
+                  </div>
+                  <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                      <button class="btn btn-circle carousel-nav-btn" data-target="slide1">❮</button>
+                      <button class="btn btn-circle carousel-nav-btn" data-target="slide3">❯</button>
+                  </div>
+                </div>
+                <div id="slide3" class="carousel-item relative w-full">
+                  <div id="viz-10" class="viz-graph">
+                    <script type="module" src="scripts/visualizations/noteIPAAmerican.js"></script>
+                  </div>
+                  <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                      <button class="btn btn-circle carousel-nav-btn" data-target="slide2">❮</button>
+                      <button class="btn btn-circle carousel-nav-btn" data-target="slide3">❯</button>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="viz-desc card p-6">
@@ -339,35 +368,6 @@
               </div>
             </div>
           </section>
-
-        <!-- Section 9 -->
-        <section class="viz-section carousel-item">
-          <!-- D3 graph -->
-          <div id="viz-9" class="viz-graph">
-            <script type="module" src="scripts/visualizations/avg_beers_brewery_type.js"></script>
-          </div>
-
-          <div class="viz-desc card p-6">
-            <!-- Description -->
-            <h2 class="text-2xl">
-              Average number of beers depending on brewery type
-            </h2>
-            <div class="viz-text">
-              <p>
-                Tata tutu
-              </p>
-            </div>
-
-            <!-- Cool stats -->
-            <div class="stats-showcase">
-              <div class="card stat bg-white text-white w-min">
-                <div class="stat-title text-black">Minsk</div>
-                <div class="stat-value text-[#C9B037]">toto</div>
-                <div class="stat-desc text-black">bibi bobo</div>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
 		</main>
 
