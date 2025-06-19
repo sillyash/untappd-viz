@@ -145,6 +145,16 @@ body > main {
   margin-bottom: 20px;
 }
 
+.viz-text a {
+  color: aquamarine;
+  text-decoration: underline;
+}
+
+.viz-text a:hover {
+  color: lightpink;
+  transition: 0.3s ease-in-out;
+}
+
 .stats-showcase {
   flex: 1;
 
