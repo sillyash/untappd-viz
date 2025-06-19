@@ -1,7 +1,7 @@
 var data, cols;
 
 async function loadData() {
-  await d3.csv("assets/checkins.csv").then(function (csvData) {
+  await d3.csv("../../assets/checkins.csv").then(function (csvData) {
     /** Group by 'brewery_type'.
      * For each brewery type group, calculate the average number of unique
      * beers per brewery within that type.

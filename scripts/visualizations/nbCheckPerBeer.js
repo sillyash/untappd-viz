@@ -2,7 +2,7 @@
 
 const containerId = 'viz-2';
 function main() {
-    d3.csv("assets/checkins.csv").then(function(csv) {
+    d3.csv("../../assets/checkins.csv").then(function(csv) {
   
       const filtered = csv.filter(d => +d.checkins_count > 20000);
 
@@ -82,4 +82,5 @@ function main() {
   }
 
 main();
+
   

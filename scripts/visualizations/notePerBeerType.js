@@ -1,7 +1,7 @@
 const containerId = 'viz-';
 
 function main() {
-  d3.csv("assets/checkins.csv").then(function(csv) { /* ici toute votre creation de la visualization */
+  d3.csv("../../assets/checkins.csv").then(function(csv) { /* ici toute votre creation de la visualization */
 
     const filtered = csv.filter(d => +d.checkins_count > 20000);
 
