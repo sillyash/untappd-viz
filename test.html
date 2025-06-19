@@ -17,8 +17,11 @@
   <div id="chart-container2"></div>
   <div id="chart-container3"></div>
   <div id="chart-container4"></div>
+  <div id="chart-containerVIMH"></div>
   <div id="chart-container5"></div>
   <div id="chart-container6"></div>
+  <div id="chart-containerPBT"></div>
+  <div id="chart-containerchekinsPerBeerType"></div>
 
   <!-- Importer ton fichier JS avec module -->
   <script type="module">
@@ -27,12 +30,18 @@
     import { createChart4 } from './scripts/visualizations/noteIPAAmerican.js';  
     import { createChart5 } from './scripts/visualizations/notesHisto.js';  
     import { createChart6 } from './scripts/visualizations/nbCheckPerBeer.js';  
+    import { createChartVIMH } from './scripts/visualizations/noteIPAVIMH.js';  
+    import { createChartPBT } from './scripts/visualizations/notePerBeerType.js';  
+    import { createChartcheckinsPBT } from './scripts/visualizations/checkinsPerBeerType.js';  
 
     createChart2('chart-container2');
     createChart3('chart-container3');
     createChart4('chart-container4');
+    createChartVIMH('chart-containerVIMH');
     createChart5('chart-container5');
     createChart6('chart-container6');
+    createChartPBT('chart-containerPBT');
+    createChartcheckinsPBT('chart-containerchekinsPerBeerType');
 
   </script>
 
