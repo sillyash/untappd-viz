@@ -69,7 +69,7 @@ function makeYaxis(height, data) {
 async function main() {
   await loadData();
 
-  const margin = { top: 20, right: 30, bottom: 180, left: 60 };
+  const margin = { top: 30, right: 30, bottom: 180, left: 60 };
   const width = 900 - margin.left - margin.right;
   const height = 800 - margin.top - margin.bottom;
 

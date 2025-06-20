@@ -78,7 +78,7 @@ function makeYaxis(height, data) {
 async function main() {
   await loadData();
 
-  const margin = { top: 20, right: 30, bottom: 180, left: 60 }; // Increased bottom margin for brewery names
+  const margin = { top: 35, right: 30, bottom: 140, left: 60 }; // Increased bottom margin for brewery names
   const width = 900 - margin.left - margin.right; // Increased width
   const height = 800 - margin.top - margin.bottom; // Adjusted height
 
