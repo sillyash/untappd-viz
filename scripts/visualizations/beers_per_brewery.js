@@ -5,18 +5,23 @@ async function loadData() {
     /** Group by 'brewery_name'.
      * For each brewery group (v), create a Set of unique 'beer_name's
      * and get its size, i.e. count of unique beers.
+     * Also, take the first 'brewery_type' from the group (same brewery, same brewery_type).
      */
     const breweryData = d3.rollup(
       csvData,
-      (v) => new Set(v.map((d) => d.beer_name)).size,
+      (v) => ({
+        num_beers: new Set(v.map((d) => d.beer_name)).size,
+        brewery_type: v[0].brewery_type
+      }),
       (d) => d.brewery_name
     );
 
-    data = Array.from(breweryData, ([brewery_name, num_beers]) => ({
+    data = Array.from(breweryData, ([brewery_name, { num_beers, brewery_type }]) => ({
       brewery_name,
       num_beers,
+      brewery_type
     }));
-    
+
     // Sort by number of beers
     data.sort((a, b) => b.num_beers - a.num_beers);
 
@@ -64,14 +69,18 @@ function makeYaxis(height, data) {
 async function main() {
   await loadData();
 
-  const margin = { top: 20, right: 30, bottom: 180, left: 60 }; // Increased bottom margin for brewery names
-  const width = 900 - margin.left - margin.right; // Increased width
-  const height = 800 - margin.top - margin.bottom; // Adjusted height
+  const margin = { top: 20, right: 30, bottom: 180, left: 60 };
+  const width = 900 - margin.left - margin.right;
+  const height = 800 - margin.top - margin.bottom;
 
-  // Create SVG
+  // Color scale
+  const types = Array.from(new Set(data.map(d => d.brewery_type)));
+  const color = d3.scaleOrdinal()
+    .domain(types)
+    .range(d3.schemeCategory10);
+
   var svg = makeSVG(width, height, margin);
 
-  // X axis (brewery names)
   var x = makeXaxis(width, data);
   svg
     .append("g")
@@ -81,13 +90,11 @@ async function main() {
     .style("text-anchor", "end")
     .attr("dx", "-.8em")
     .attr("dy", ".15em")
-    .attr("transform", "rotate(-45)"); // Rotate labels for readability
+    .attr("transform", "rotate(-45)");
 
-  // Y axis (number of beers)
   var y = makeYaxis(height, data);
   svg.append("g").call(d3.axisLeft(y));
 
-  // Add Y axis label
   svg
     .append("text")
     .attr("transform", "rotate(-90)")
@@ -97,7 +104,7 @@ async function main() {
     .style("text-anchor", "middle")
     .text("Number of Different Beers");
 
-  // Create bars
+  // Bars with color by brewery_type
   svg
     .selectAll("rect")
     .data(data)
@@ -107,9 +114,8 @@ async function main() {
     .attr("width", x.bandwidth())
     .attr("y", (d) => y(d.num_beers))
     .attr("height", (d) => height - y(d.num_beers))
-    .style("fill", "#69b3a2");
+    .style("fill", (d) => color(d.brewery_type));
 
-  // Add value labels on top of bars
   svg
     .selectAll(".label")
     .data(data)
@@ -121,6 +127,27 @@ async function main() {
     .attr("text-anchor", "middle")
     .style("font-size", "12px")
     .text((d) => d.num_beers);
+
+  // Add color legend for brewery_type
+  const legend = svg.append("g")
+    .attr("class", "legend")
+    .attr("transform", `translate(${width - 140}, 10)`);
+
+  types.forEach((type, i) => {
+    legend.append("rect")
+      .attr("x", 0)
+      .attr("y", i * 22)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color(type));
+
+    legend.append("text")
+      .attr("x", 26)
+      .attr("y", i * 22 + 13)
+      .text(type)
+      .style("font-size", "14px")
+      .attr("alignment-baseline", "middle");
+  });
 }
 
 main();
