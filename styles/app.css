@@ -191,3 +191,20 @@ body > main {
   width: 100%;
   max-height: calc(100vh - 2 * var(--section-padding-h));;
 }
+
+#viz-end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+
+  padding: var(--section-padding-h) var(--section-padding-w);
+  width: calc(100% - 2 * var(--section-padding-w));
+  height: calc(100% - 2 * var(--section-padding-h));
+
+  background-color: black;
+  color: white;
+
+  text-align: center;
+}
