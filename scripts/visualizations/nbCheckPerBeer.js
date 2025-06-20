@@ -67,7 +67,7 @@ function main() {
         rect.setAttribute("y", yScale(count));
         rect.setAttribute("width", xScale.bandwidth());
         rect.setAttribute("height", innerHeight - yScale(count));
-        rect.setAttribute("fill", "steelblue");
+        rect.setAttribute("fill", "#9932CC");
         g.appendChild(rect);
       });
   

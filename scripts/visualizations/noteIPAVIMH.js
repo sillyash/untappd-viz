@@ -89,7 +89,7 @@ function main() {
         rect.setAttribute("y", yScale(d));
         rect.setAttribute("width", barWidth);
         rect.setAttribute("height", innerHeight - yScale(d));
-        rect.setAttribute("fill", "steelblue");
+        rect.setAttribute("fill", "#B0E0E6");
         g.appendChild(rect);
       });
     
