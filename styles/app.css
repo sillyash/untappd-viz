@@ -88,6 +88,18 @@ body > main {
   flex: 1;
 }
 
+#bg-hero {
+  background-image: url(https://c1.wallpaperflare.com/path/672/499/652/beer-a-pint-cup-alcohol-9a9f1bdeba98cc84d1b4ee3d2dbc21c1.jpg);
+  filter: brightness(0.25);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
 /* Responsive adjustments for header/footer */
 @media (max-width: 640px) {
   body > header, body > footer {
