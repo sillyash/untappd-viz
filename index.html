@@ -316,7 +316,25 @@
               </h2>
               <div class="viz-text">
                 <p>
-                  Tata tutu
+                  This graphs now shows the average note of beer types. 
+                </p>
+                <p>
+                  We see here a combination of what we learned before with the other graphs.<br>
+                  On the first hand we mesure a repartition similar to chekins count (in a reduced scale). <br>
+                  And, on the other hand, we see a normalization happening between 3 and 4.
+                </p>
+                <p>
+                  Now, it is interesting to note the differences between the average notes and the chekins count. <br>
+                  If you look closely, you an see a general tendency for higher ranked beer to have less chekins while, beers with a lot of checkins tend to have more mixed opinions. 
+                </p>
+                <p>
+                  It's very interesting to see that over a larger number of notations, the rating semms to be a lot more balanced and we mesure a trend to less extrem ratings. 
+                </p>
+                <p>
+                  This form of graph was a recurring element in our study and although we see it in different scalling, the ratio of notes and cheskins looks like everywhere and whatever the object is.
+                </p>
+                <p>
+                  <br><em>PS: Only the beers with >20 000 checkins are shown to simplify the graph although, it does not change the conclusions.</em>
                 </p>
               </div>
 
@@ -341,11 +359,27 @@
             <div class="viz-desc card p-6">
               <!-- Description -->
               <h2 class="text-2xl">
-                Average number of beers depending on brewery type
+                Practical exemple : Alivaria Beloe Zoloto
               </h2>
               <div class="viz-text">
                 <p>
-                  Tata tutu
+                  here we can see all the ratings given to the beer <a href="https://untappd.com/b/pi-zavod-alivaryya-alivaria-brewery-alivaria-beloe-zoloto-alivariya-beloe-zoloto/21655">Alivaria Beloe Zoloto</a>
+                  <br> Out of a total 16 notations (in our dataset), it was rated 3.19 / 5.  
+                </p>
+                <p>
+                  This beer is a perfect exemple to show our conclusions for real. 
+                </p>
+                <p>
+                  The average notation falls exactly with the global average and we see a repartition of notes that looks exactly like the global one.
+                </p>
+                <p>
+                  In terms of beer style, it's a "Wheat Beer" which is a mid-field type with ranks a bit higher at 3.3 average and the 11th most popular. 
+                </p>
+                <p>
+                  It's also a very nice exemple of our graph format showing up again, even on a very small scale.
+                </p>
+                <p>
+                  To trully comprehend this graph we will see next how it compares to other beers.
                 </p>
               </div>
 
@@ -364,9 +398,9 @@
           <section class="viz-section carousel-item">
             <!-- D3 graph -->
 
-            <div class="viz-graph">
-              <div class="carousel rounded-box w-full">
-                <div id="slide1" class="carousel-item relative w-full">
+            <div class="viz-graph content-center">
+              <div class="carousel rounded-box">
+                <div id="slide1" class="carousel-item relative w-full flex justify-center">
                   <div id="viz-8" class="viz-graph">
                     <script type="module" src="scripts/visualizations/noteBeer.js"></script>
                   </div>
@@ -375,7 +409,7 @@
                       <button class="btn btn-circle carousel-nav-btn" data-target="slide2">❯</button>
                   </div>
                 </div>
-                <div id="slide2" class="carousel-item relative w-full">
+                <div id="slide2" class="carousel-item relative w-full flex justify-center">
                   <div id="viz-9" class="viz-graph">
                     <script type="module" src="scripts/visualizations/noteIPA.js"></script>
                   </div>
@@ -384,7 +418,7 @@
                       <button class="btn btn-circle carousel-nav-btn" data-target="slide3">❯</button>
                   </div>
                 </div>
-                <div id="slide3" class="carousel-item relative w-full">
+                <div id="slide3" class="carousel-item relative w-full flex justify-center">
                   <div id="viz-10" class="viz-graph">
                     <script type="module" src="scripts/visualizations/noteIPAAmerican.js"></script>
                   </div>
@@ -399,11 +433,31 @@
             <div class="viz-desc card p-6">
               <!-- Description -->
               <h2 class="text-2xl">
-                Average number of beers depending on brewery type
+                Conclusions about beer notations
               </h2>
               <div class="viz-text">
                 <p>
-                  Tata tutu
+                  For the last graph, we choose to show 3 representations.
+                </p>
+                <p>
+                  - Avg notes for all beers <br>
+                  - Avg notes for IPAs <br>
+                  - Avg notes for American IPAs
+                </p>
+                <p>
+                  So these graphs zoom progressively toward a more precise object of study.
+                </p>
+                <p>
+                  All 3 and just like the others show the same curb and thus, the same conclusions can be made.
+                </p>
+                <p>
+                  <strong><em>A small minority holds most of it, while the majority has much less.</em></strong>
+                </p>
+                <p>
+                  <strong><em>The vast majority of notes are between 3 and 4, with a few extrems</em></strong>
+                </p>
+                <p>
+                  <strong><em>Over a bigger set of data, we mesure a normalization and a global balancing</em></strong>
                 </p>
               </div>
 
