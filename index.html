@@ -431,33 +431,56 @@
 
             <div class="viz-graph content-center">
               <div class="carousel rounded-box h-full">
-                <div id="slide1" class="carousel-item relative h-full w-full flex justify-center">
+                <div id="slide1" class="carousel-item relative h-full w-full flex-col justify-center">
+                  <h2 class="w-full mt-50 mb-20 text-center text-3xl font-bold">
+                    Average note for all beers
+                  </h2>
                   <div class="flex flex-row items-center w-full h-full justify-center">
-                    <button class="btn btn-circle carousel-nav-btn mx-2" data-target="slide1">❮</button>
                     <div id="viz-8" class="viz-graph h-full w-full flex-1">
                       <script type="module" src="scripts/visualizations/noteBeer.js"></script>
                     </div>
-                    <button class="btn btn-circle carousel-nav-btn mx-2" data-target="slide2">❯</button>
+                    <button
+                      class="btn btn-circle carousel-nav-btn size-13 text-2xl bg-black text-white mx-2"
+                      data-target="slide2">
+                      ❯
+                    </button>
                   </div>
                 </div>
 
-                <div id="slide2" class="carousel-item relative h-full w-full flex justify-center">
+                <div id="slide2" class="carousel-item relative h-full w-full flex-col justify-center">
+                  <h2 class="w-full mt-50 mb-20 text-center text-3xl font-bold">
+                    Average note for all IPAs
+                  </h2>
                   <div class="flex flex-row items-center w-full h-full justify-center">
-                    <button class="btn btn-circle carousel-nav-btn mx-2" data-target="slide1">❮</button>
+                    <button
+                      class="btn btn-circle carousel-nav-btn size-13 text-2xl bg-black text-white mx-2"
+                      data-target="slide1">
+                      ❮
+                    </button>
                     <div id="viz-9" class="viz-graph h-full w-full flex-1">
                       <script type="module" src="scripts/visualizations/noteIPA.js"></script>
                     </div>
-                    <button class="btn btn-circle carousel-nav-btn mx-2" data-target="slide3">❯</button>
+                    <button
+                      class="btn btn-circle carousel-nav-btn size-13 text-2xl bg-black text-white mx-2"
+                      data-target="slide3">
+                      ❯
+                    </button>
                   </div>
                 </div>
 
-                <div id="slide3" class="carousel-item relative h-full w-full flex justify-center">
+                <div id="slide3" class="carousel-item relative h-full w-full flex-col justify-center">
+                  <h2 class="w-full mt-50 mb-20 text-center text-3xl font-bold">
+                    Average note for American IPAs
+                  </h2>
                   <div class="flex flex-row items-center w-full h-full justify-center">
-                    <button class="btn btn-circle carousel-nav-btn mx-2" data-target="slide2">❮</button>
+                    <button
+                      class="btn btn-circle carousel-nav-btn size-13 text-2xl bg-black text-white mx-2"
+                      data-target="slide2">
+                      ❮
+                    </button>
                     <div id="viz-10" class="viz-graph h-full w-full flex-1">
                       <script type="module" src="scripts/visualizations/noteIPAAmerican.js"></script>
                     </div>
-                    <button class="btn btn-circle carousel-nav-btn mx-2" data-target="slide3">❯</button>
                   </div>
                 </div>
               </div>
