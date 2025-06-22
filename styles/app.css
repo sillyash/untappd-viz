@@ -197,8 +197,12 @@ body > main {
 }
 
 .viz-graph > svg {
+  /*
   border: solid black 2px;
   border-radius: 10px;
+  
+  for debug
+  */
 
   width: 100%;
   max-height: calc(100vh - 2 * var(--section-padding-h));;
